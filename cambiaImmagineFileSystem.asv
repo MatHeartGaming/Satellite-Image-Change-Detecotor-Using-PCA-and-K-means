@@ -1,0 +1,10 @@
+function [path] = cambiaImmagineFileSystem(image)
+    [~, path] = uigetfile({'*.*;*.jpg;*.png;*.bmp;*.oct'}, 'Select File to Open');
+    fullname = [app.path, app.file];  % Get path and file to allow the UI Image Component to render the choosen image
+    app.Image.ImageSource = fullname; % Load the image into the UI Image Component
+
+    I = imread(fullfile(app.path, app.file));
+
+
+    
+end
